@@ -1,0 +1,1 @@
+export function tickTime(hms:string, deltaMs:number, speed:number){const [h,m,s]=hms.split(':').map(Number); let total=h*3600+m*60+s+Math.floor(deltaMs/1000*speed); total=((total%86400)+86400)%86400; const pad=(n:number)=>String(n).padStart(2,'0'); return `${pad(Math.floor(total/3600))}:${pad(Math.floor(total%3600/60))}:${pad(total%60)}`;}
